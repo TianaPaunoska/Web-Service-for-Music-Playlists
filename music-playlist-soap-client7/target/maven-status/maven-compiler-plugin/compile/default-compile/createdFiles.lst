@@ -1,0 +1,7 @@
+com\example\playlist\sendPlaylist\ObjectFactory.class
+com\musicplaylist\spring\soap\api\config\SoapConfig7.class
+com\example\playlist\sendPlaylist\package-info.class
+com\example\playlist\sendPlaylist\SendPlaylistRequest.class
+com\musicplaylist\spring\soap\api\SpringBootSoapClient7.class
+com\example\playlist\sendPlaylist\SendPlaylistResponse.class
+com\musicplaylist\spring\soap\api\client\SoapClient7.class

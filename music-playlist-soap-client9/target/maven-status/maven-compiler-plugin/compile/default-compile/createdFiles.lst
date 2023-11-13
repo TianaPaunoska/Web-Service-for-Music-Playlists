@@ -1,0 +1,7 @@
+com\example\playlist\orderPlaylist\OrderPlaylistRequest.class
+com\example\playlist\orderPlaylist\package-info.class
+com\musicplaylist\spring\soap\api\SpringBootSoapClient9.class
+com\musicplaylist\spring\soap\api\config\SoapConfig9.class
+com\example\playlist\orderPlaylist\OrderPlaylistResponse.class
+com\example\playlist\orderPlaylist\ObjectFactory.class
+com\musicplaylist\spring\soap\api\client\SoapClient9.class

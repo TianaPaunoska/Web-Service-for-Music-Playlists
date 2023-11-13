@@ -1,0 +1,7 @@
+com\example\playlist\shufflePlaylist\ObjectFactory.class
+com\example\playlist\shufflePlaylist\ShufflePlaylistRequest.class
+com\musicplaylist\spring\soap\api\client\SoapClient8.class
+com\musicplaylist\spring\soap\api\SpringBootSoapClient8.class
+com\example\playlist\shufflePlaylist\package-info.class
+com\example\playlist\shufflePlaylist\ShufflePlaylistResponse.class
+com\musicplaylist\spring\soap\api\config\SoapConfig8.class

@@ -1,0 +1,67 @@
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://example.com/playlist/playlistInfo"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://example.com/playlist/playlistInfo"
+	targetNamespace="http://example.com/playlist/playlistInfo">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified"
+			targetNamespace="http://example.com/playlist/playlistInfo">
+			<xsd:element name="playlistInfoRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="name" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="playlistInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="playlistDuration" type="xsd:double" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="playlistInfoResponse">
+		<wsdl:part element="tns:playlistInfoResponse"
+			name="playlistInfoResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="playlistInfoRequest">
+		<wsdl:part element="tns:playlistInfoRequest"
+			name="playlistInfoRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="PlaylistInfo">
+		<wsdl:operation name="playlistInfo">
+			<wsdl:input message="tns:playlistInfoRequest"
+				name="playlistInfoRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:playlistInfoResponse"
+				name="playlistInfoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PlaylistInfoSoap11"
+		type="tns:PlaylistInfo">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="playlistInfo">
+			<soap:operation soapAction="" />
+			<wsdl:input name="playlistInfoRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="playlistInfoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PlaylistInfoService">
+		<wsdl:port binding="tns:PlaylistInfoSoap11"
+			name="PlaylistInfoSoap11">
+			<soap:address location="http://localhost:8080/ws" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

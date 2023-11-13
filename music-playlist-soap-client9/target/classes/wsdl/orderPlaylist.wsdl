@@ -1,0 +1,67 @@
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://example.com/playlist/orderPlaylist"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://example.com/playlist/orderPlaylist"
+	targetNamespace="http://example.com/playlist/orderPlaylist">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified"
+			targetNamespace="http://example.com/playlist/orderPlaylist">
+			<xsd:element name="orderPlaylistRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="name" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="orderPlaylistResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="message" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="orderPlaylistResponse">
+		<wsdl:part element="tns:orderPlaylistResponse"
+			name="orderPlaylistResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="orderPlaylistRequest">
+		<wsdl:part element="tns:orderPlaylistRequest"
+			name="orderPlaylistRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="OrderPlaylist">
+		<wsdl:operation name="orderPlaylist">
+			<wsdl:input message="tns:orderPlaylistRequest"
+				name="orderPlaylistRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:orderPlaylistResponse"
+				name="orderPlaylistResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="OrderPlaylistSoap11"
+		type="tns:OrderPlaylist">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="orderPlaylist">
+			<soap:operation soapAction="" />
+			<wsdl:input name="orderPlaylistRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="orderPlaylistResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="OrderPlaylistService">
+		<wsdl:port binding="tns:OrderPlaylistSoap11"
+			name="OrderPlaylistSoap11">
+			<soap:address location="http://localhost:8080/ws" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

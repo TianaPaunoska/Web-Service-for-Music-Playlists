@@ -1,0 +1,7 @@
+com\musicplaylist\spring\soap\api\config\SoapConfig5.class
+com\example\playlist\userInfo\ObjectFactory.class
+com\musicplaylist\spring\soap\api\client\SoapClient5.class
+com\musicplaylist\spring\soap\api\SpringBootSoapClient5.class
+com\example\playlist\userInfo\UserInfoRequest.class
+com\example\playlist\userInfo\UserInfoResponse.class
+com\example\playlist\userInfo\package-info.class

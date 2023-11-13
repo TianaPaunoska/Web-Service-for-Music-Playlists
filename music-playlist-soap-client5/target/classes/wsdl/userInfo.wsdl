@@ -1,0 +1,67 @@
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://example.com/playlist/userInfo"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://example.com/playlist/userInfo"
+	targetNamespace="http://example.com/playlist/userInfo">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified"
+			targetNamespace="http://example.com/playlist/userInfo">
+			<xsd:element name="userInfoRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="username" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="userInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="username" type="xsd:string" />
+						<xsd:element name="sessionId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="userInfoResponse">
+		<wsdl:part element="tns:userInfoResponse"
+			name="userInfoResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="userInfoRequest">
+		<wsdl:part element="tns:userInfoRequest"
+			name="userInfoRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="UserInfo">
+		<wsdl:operation name="userInfo">
+			<wsdl:input message="tns:userInfoRequest"
+				name="userInfoRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:userInfoResponse"
+				name="userInfoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="UserInfoSoap11" type="tns:UserInfo">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="userInfo">
+			<soap:operation soapAction="" />
+			<wsdl:input name="userInfoRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="userInfoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="UserInfoService">
+		<wsdl:port binding="tns:UserInfoSoap11"
+			name="UserInfoSoap11">
+			<soap:address location="http://localhost:8080/ws" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

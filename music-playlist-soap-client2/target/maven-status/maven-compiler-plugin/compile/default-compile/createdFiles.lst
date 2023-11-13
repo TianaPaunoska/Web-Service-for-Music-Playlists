@@ -1,0 +1,7 @@
+com\musicplaylist\spring\soap\api\config\SoapConfig2.class
+com\example\playlist\registering\ObjectFactory.class
+com\example\playlist\registering\RegisterRequest.class
+com\musicplaylist\spring\soap\api\client\SoapClient2.class
+com\example\playlist\registering\RegisterResponse.class
+com\example\playlist\registering\package-info.class
+com\musicplaylist\spring\soap\api\SpringBootSoapClient2.class

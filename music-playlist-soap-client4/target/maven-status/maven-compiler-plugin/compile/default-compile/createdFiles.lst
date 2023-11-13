@@ -1,0 +1,7 @@
+com\musicplaylist\spring\soap\api\config\SoapConfig4.class
+com\example\playlist\changePassword\ChangePasswordRequest.class
+com\musicplaylist\spring\soap\api\client\SoapClient4.class
+com\example\playlist\changePassword\package-info.class
+com\example\playlist\changePassword\ChangePasswordResponse.class
+com\example\playlist\changePassword\ObjectFactory.class
+com\musicplaylist\spring\soap\api\SpringBootSoapClient4.class

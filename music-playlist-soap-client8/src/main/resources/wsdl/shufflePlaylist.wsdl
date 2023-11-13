@@ -1,0 +1,67 @@
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://example.com/playlist/shufflePlaylist"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://example.com/playlist/shufflePlaylist"
+	targetNamespace="http://example.com/playlist/shufflePlaylist">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified"
+			targetNamespace="http://example.com/playlist/shufflePlaylist">
+			<xsd:element name="shufflePlaylistRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="name" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="shufflePlaylistResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="message" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="shufflePlaylistRequest">
+		<wsdl:part element="tns:shufflePlaylistRequest"
+			name="shufflePlaylistRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="shufflePlaylistResponse">
+		<wsdl:part element="tns:shufflePlaylistResponse"
+			name="shufflePlaylistResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ShufflePlaylist">
+		<wsdl:operation name="shufflePlaylist">
+			<wsdl:input message="tns:shufflePlaylistRequest"
+				name="shufflePlaylistRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:shufflePlaylistResponse"
+				name="shufflePlaylistResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ShufflePlaylistSoap11"
+		type="tns:ShufflePlaylist">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="shufflePlaylist">
+			<soap:operation soapAction="" />
+			<wsdl:input name="shufflePlaylistRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="shufflePlaylistResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ShufflePlaylistService">
+		<wsdl:port binding="tns:ShufflePlaylistSoap11"
+			name="ShufflePlaylistSoap11">
+			<soap:address location="http://localhost:8080/ws" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

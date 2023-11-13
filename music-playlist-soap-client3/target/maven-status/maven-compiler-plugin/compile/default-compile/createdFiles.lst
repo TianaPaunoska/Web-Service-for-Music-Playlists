@@ -1,0 +1,7 @@
+com\musicplaylist\spring\soap\api\client\SoapClient3.class
+com\example\playlist\unregistering\package-info.class
+com\musicplaylist\spring\soap\api\SpringBootSoapClient3.class
+com\musicplaylist\spring\soap\api\config\SoapConfig3.class
+com\example\playlist\unregistering\UnregisterRequest.class
+com\example\playlist\unregistering\UnregisterResponse.class
+com\example\playlist\unregistering\ObjectFactory.class
